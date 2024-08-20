@@ -1,0 +1,114 @@
+
+    <title>Depression FAQ Accordion</title>
+    <style>
+        body {
+            /* font-family: Arial, sans-serif; */
+            margin: 0;
+            padding: 0;
+            background: #f0f0f0;
+            /* display: flex; */
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .accordion-container {
+            width: 80%;
+            max-width: 800px;
+            background: #fff;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .accordion {
+            border-top: 1px solid #ddd;
+        }
+
+        .accordion-item {
+            border-bottom: 1px solid #ddd;
+        }
+
+        .accordion-header {
+            padding: 15px;
+            cursor: pointer;
+            background: #f8f8f8;
+            font-size: 16px;
+            font-weight: bold;
+            transition: background 0.3s;
+        }
+
+        .accordion-header:hover {
+            background: #e0e0e0;
+        }
+
+        .accordion-body {
+            max-height: 0;
+            overflow: hidden;
+            padding: 0 15px;
+            background: #fff;
+            transition: max-height 0.3s ease-out;
+        }
+
+        .accordion-body p {
+            margin: 15px 0;
+        }
+
+        .active .accordion-body {
+            max-height: 200px; /* Adjust as needed */
+            padding: 15px;
+        }
+    </style>
+</head>
+<body>
+    <div class="accordion-container">
+        <div class="accordion">
+            <div class="accordion-item">
+                <div class="accordion-header">What is depression?</div>
+                <div class="accordion-body">
+                    <p>Depression is a mental health disorder characterized by persistent sadness, loss of interest in activities, and various emotional and physical symptoms. It affects how a person feels, thinks, and handles daily activities.</p>
+                </div>
+            </div>
+            <div class="accordion-item">
+                <div class="accordion-header">What are the symptoms of depression?</div>
+                <div class="accordion-body">
+                    <p>Common symptoms of depression include persistent sadness, changes in appetite or weight, sleep disturbances, fatigue, feelings of worthlessness, and difficulty concentrating. Symptoms can vary in severity and duration.</p>
+                </div>
+            </div>
+            <div class="accordion-item">
+                <div class="accordion-header">How is depression treated?</div>
+                <div class="accordion-body">
+                    <p>Depression can be treated through a combination of therapy, medication, and lifestyle changes. Common treatments include cognitive-behavioral therapy (CBT), antidepressants, and support from family and friends. It's important to consult with a mental health professional for a personalized treatment plan.</p>
+                </div>
+            </div>
+            <div class="accordion-item">
+                <div class="accordion-header">Can depression be prevented?</div>
+                <div class="accordion-body">
+                    <p>While depression may not always be preventable, maintaining a healthy lifestyle, managing stress, seeking early intervention, and building a support network can help reduce the risk. Regular physical activity, a balanced diet, and adequate sleep are also beneficial.</p>
+                </div>
+            </div>
+            <div class="accordion-item">
+                <div class="accordion-header">Where can I get help for depression?</div>
+                <div class="accordion-body">
+                    <p>Help for depression can be obtained through mental health professionals such as therapists, counselors, and psychiatrists. Additionally, support groups, helplines, and online resources can provide valuable assistance. If you or someone you know is in crisis, seek immediate help from emergency services or a crisis hotline.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const accordionHeaders = document.querySelectorAll('.accordion-header');
+        
+        accordionHeaders.forEach(header => {
+            header.addEventListener('click', () => {
+                const item = header.parentNode;
+                const isActive = item.classList.contains('active');
+
+                document.querySelectorAll('.accordion-item').forEach(i => i.classList.remove('active'));
+                
+                if (!isActive) {
+                    item.classList.add('active');
+                }
+            });
+        });
+    </script>
